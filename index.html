@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Demo E‑Commerce</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo-container">
+            <svg class="logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="8" fill="white" fill-opacity="0.2"/>
+              <path d="M20 12L12 18V28H28V18L20 12Z" fill="white" fill-opacity="0.9"/>
+              <circle cx="20" cy="20" r="3" fill="white"/>
+              <path d="M16 16L20 12L24 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <h1>DemoShop</h1>
+            <p class="tag">Simple client-side store</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <input id="search" type="search" placeholder="Search products..." />
+          <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+            🛒 <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home" class="container main-grid">
+      <aside class="filters">
+        <h3>Filters</h3>
+        <label>
+          Category
+          <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="clothing">Clothing</option>
+            <option value="gadgets">Gadgets</option>
+            <option value="home">Home</option>
+          </select>
+        </label>
+        <label>
+          Max price
+          <input id="maxPrice" type="range" min="0" max="500" value="500" />
+          <span id="maxPriceVal">$500</span>
+        </label>
+      </aside>
+
+      <section class="products" id="products">
+        <!-- Products will be rendered here by app.js -->
+      </section>
+
+      <section class="info-cards">
+        <section id="about" class="card">
+          <h3>About</h3>
+          <p>This demo store was built with HTML, CSS and JS. Author: Ayan Kar.</p>
+        </section>
+
+        <section id="contact" class="card">
+          <h3>Contact</h3>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <textarea id="msg" placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+          </form>
+          <div id="formResult" class="form-result"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© DemoShop — Demo e-commerce store</div>
+    </footer>
+
+    <!-- Cart drawer -->
+    <div id="cartDrawer" class="cart-drawer" hidden>
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart">✖</button>
+      </div>
+      <ul id="cartItems" class="cart-items"></ul>
+      <div class="cart-summary">
+        <div>Subtotal: <strong id="cartSubtotal">$0.00</strong></div>
+        <div class="cart-actions">
+          <button id="clearCart">Clear</button>
+          <button id="checkoutBtn" class="primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
